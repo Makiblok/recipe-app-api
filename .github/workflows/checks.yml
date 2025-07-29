@@ -1,8 +1,7 @@
----
 name: Checks
- 
+
 on: [push]
- 
+
 jobs:
   test-lint:
     name: Test and Lint
@@ -10,14 +9,18 @@ jobs:
     steps:
       - name: Debug secrets
         run: echo "User: ${{ secrets.DOCKERHUB_USER }} Token length: ${{ secrets.DOCKERHUB_TOKEN && secrets.DOCKERHUB_TOKEN.length }}"
+
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USER }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Test
         run: docker compose run --rm app sh -c "python manage.py test"
+
       - name: Lint
         run: docker compose run --rm app sh -c "flake8"
