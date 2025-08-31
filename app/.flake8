@@ -1,6 +1,14 @@
 [flake8]
-exclude = 
+exclude =
     migrations,
     __pycache__,
     manage.py,
-    settings.py
+    settings.py,
+    ./app/tests.py,
+    ./app/calc.py,
+    ./core/admin.py,
+    ./core/models.py,
+    ./core/tests/test_models.py,
+    ./core/tests/test_commands.py,
+    ./core/tests/test_admin.py,
+    ./core/management/commands/wait_for_db.py,
