@@ -3,7 +3,7 @@
 .gitignore
 
 #Docker
-.docker 
+.docker
 
 #Python
 app/__pycache__/
@@ -13,3 +13,11 @@ app/*/*/*/__pycache__/
 .env/
 .venv/
 venv/
+./app/tests.py
+./app/calc.py
+./core/admin.py
+./core/models.py
+./core/tests/test_models.py
+./core/tests/test_commands.py
+./core/tests/test_admin.py
+./core/management/commands/wait_for_db.py
